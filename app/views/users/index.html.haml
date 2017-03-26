@@ -1,0 +1,23 @@
+.page-header
+  = link_to new_user_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New User
+%h1 Listing users
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Email
+        %th{colspan: 3}
+
+    %tbody.table-body
+      - @users.each do |user|
+        %tr
+          %td
+            = user.name
+          %td
+            = user.email
+          %td
+            = link_to 'Show', user
