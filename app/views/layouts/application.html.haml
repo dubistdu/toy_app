@@ -25,12 +25,12 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to "#", class: "navbar-brand" do
+          = link_to users_path, class: "navbar-brand" do
             ToyApp
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li.active
-              = link_to "Home", "#"
+              = link_to "Home", users_path
     .container
       - flash.each do |name, msg|
         = content_tag :div, class: "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do

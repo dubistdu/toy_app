@@ -1,0 +1,23 @@
+.page-header
+  = link_to new_micropost_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Micropost
+%h1 Listing microposts
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Content
+        %th User
+        %th{colspan: 3}
+
+    %tbody.table-body
+      - @microposts.each do |micropost|
+        %tr
+          %td
+            = micropost.content
+          %td
+            = micropost.user_id
+          %td
+            = link_to 'Destroy', micropost, method: :delete, data: {confirm: 'Are you sure?'}

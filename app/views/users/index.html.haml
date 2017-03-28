@@ -12,6 +12,7 @@
         %th Email
         %th{colspan: 3}
 
+
     %tbody.table-body
       - @users.each do |user|
         %tr
@@ -21,3 +22,7 @@
             = user.email
           %td
             = link_to 'Show', user
+          %td
+            = link_to 'Edit', edit_user_path(user) #if it's just user, it will be a two step process. It does not go to edit user page directly
+          %td
+            = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
